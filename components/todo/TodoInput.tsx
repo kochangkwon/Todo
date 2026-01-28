@@ -61,11 +61,12 @@ export function TodoInput({ onAddTodo, disabled = false }: TodoInputProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass rounded-2xl p-6 shadow-2xl"
+      className="glass dark:glass-dark rounded-2xl p-6 shadow-2xl"
+      aria-label="새로운 할 일 추가 폼"
     >
       <div className="space-y-4">
         <div>
-          <h2 className="text-lg font-semibold mb-4">새로운 할 일 추가</h2>
+          <h2 className="text-lg font-semibold mb-4 dark:text-neutral-100">새로운 할 일 추가</h2>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
@@ -78,8 +79,9 @@ export function TodoInput({ onAddTodo, disabled = false }: TodoInputProps) {
               onChange={(e) => setContent(e.target.value)}
               onKeyDown={handleKeyDown}
               disabled={disabled}
-              className="bg-white/80 backdrop-blur-sm border-neutral-200 focus:border-brand-primary"
+              className="bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border-neutral-200 dark:border-neutral-700 focus:border-brand-primary dark:text-neutral-100"
               maxLength={500}
+              aria-label="할 일 내용"
             />
           </div>
 
@@ -90,7 +92,10 @@ export function TodoInput({ onAddTodo, disabled = false }: TodoInputProps) {
               onValueChange={(value) => setPriority(value as Priority)}
               disabled={disabled}
             >
-              <SelectTrigger className="bg-white/80 backdrop-blur-sm border-neutral-200">
+              <SelectTrigger
+                className="bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border-neutral-200 dark:border-neutral-700 dark:text-neutral-100"
+                aria-label="우선순위 선택"
+              >
                 <SelectValue placeholder="우선순위" />
               </SelectTrigger>
               <SelectContent>

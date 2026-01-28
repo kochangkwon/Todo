@@ -6,6 +6,7 @@ import { TodoInput } from '@/components/todo/TodoInput';
 import { TodoStats } from '@/components/todo/TodoStats';
 import { TodoList } from '@/components/todo/TodoList';
 import { TodoBackup } from '@/components/todo/TodoBackup';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { Card, CardContent } from '@/components/ui/card';
 import { Sparkles } from 'lucide-react';
 
@@ -40,7 +41,11 @@ export default function Home() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="glass rounded-2xl p-8 shadow-2xl">
+      <div className="glass dark:glass-dark rounded-2xl p-8 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex-1" />
+          <ThemeToggle />
+        </div>
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="w-8 h-8 text-brand-primary" />
@@ -48,7 +53,7 @@ export default function Home() {
               Premium Todo
             </h1>
           </div>
-          <p className="text-neutral-700">
+          <p className="text-neutral-700 dark:text-neutral-300">
             Next.js 15 + shadcn/ui + Framer Motion + oklch Colors
           </p>
         </div>

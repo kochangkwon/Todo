@@ -37,7 +37,7 @@ export function Pattern1_UseMounted() {
  * 패턴 2: isLoaded 플래그 사용 (useTodos 내장)
  */
 export function Pattern2_IsLoadedFlag() {
-  const { todos, isLoaded, stats } = useTodos();
+  const { isLoaded, stats } = useTodos();
 
   // 로딩 중에는 스켈레톤 UI 또는 로딩 표시
   if (!isLoaded) {

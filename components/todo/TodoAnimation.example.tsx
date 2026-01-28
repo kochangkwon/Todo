@@ -165,7 +165,7 @@ export function TodoAnimationExample() {
               <h4 className="text-sm font-semibold mb-2">3. 레이아웃 애니메이션</h4>
               <ul className="text-xs space-y-1 text-neutral-600">
                 <li>• <code>layout</code>: 다른 항목들이 자동으로 재배치</li>
-                <li>• <code>AnimatePresence mode="popLayout"</code>: 삭제 시 즉시 공간 확보</li>
+                <li>• <code>AnimatePresence mode=&quot;popLayout&quot;</code>: 삭제 시 즉시 공간 확보</li>
                 <li>• 0.3초 동안 부드럽게 전환</li>
               </ul>
             </div>
