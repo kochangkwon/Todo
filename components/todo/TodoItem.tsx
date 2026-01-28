@@ -91,7 +91,7 @@ function TodoItemComponent({ todo, onToggle, onDelete }: TodoItemProps) {
           todo.completed && 'line-through text-neutral-500'
         )}
       >
-        <span className="text-sm md:text-base">{todo.content}</span>
+        <span className="text-sm md:text-base whitespace-pre-wrap break-words">{todo.content}</span>
       </label>
 
       {/* 우선순위 뱃지 */}
