@@ -101,7 +101,7 @@ export function isLocalStorageAvailable(): boolean {
     window.localStorage.setItem(testKey, 'test');
     window.localStorage.removeItem(testKey);
     return true;
-  } catch (error) {
+  } catch {
     return false;
   }
 }

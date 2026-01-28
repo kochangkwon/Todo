@@ -22,11 +22,12 @@ export const metadata: Metadata = {
   description: "Next.js 15, shadcn/ui, Framer Motion으로 만든 프리미엄 할 일 관리 애플리케이션",
   keywords: ["todo", "할일", "task", "productivity", "next.js", "react"],
   authors: [{ name: "Premium Todo Team" }],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },

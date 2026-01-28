@@ -283,7 +283,7 @@ export function TodoLayoutExample() {
 
             <div>
               <h4 className="text-sm font-semibold mb-2">
-                3. AnimatePresence mode="popLayout"
+                3. AnimatePresence mode=&quot;popLayout&quot;
               </h4>
               <ul className="text-xs space-y-1 text-neutral-600">
                 <li>• 항목 삭제 시 즉시 레이아웃 재계산</li>
