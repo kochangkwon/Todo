@@ -21,11 +21,38 @@ function loadTodosFromStorage(): Todo[] {
     }
 
     const parsed = JSON.parse(stored);
-    // Date 객체로 변환
-    return parsed.map((todo: any) => ({
-      ...todo,
-      createdAt: new Date(todo.createdAt),
-    }));
+    let needsMigration = false;
+
+    // Date 객체로 변환 및 레거시 데이터 마이그레이션
+    const todos = parsed.map((todo: any) => {
+      // dueDate가 없는 레거시 데이터 처리
+      if (!todo.dueDate) {
+        needsMigration = true;
+        console.log(`[Migration] Adding dueDate to todo: ${todo.id}`);
+
+        return {
+          ...todo,
+          createdAt: new Date(todo.createdAt),
+          // createdAt이 있으면 그 날짜를, 없으면 오늘 날짜를 사용
+          dueDate: todo.createdAt ? new Date(todo.createdAt) : new Date(),
+        };
+      }
+
+      // dueDate가 있는 경우 Date 객체로 변환
+      return {
+        ...todo,
+        createdAt: new Date(todo.createdAt),
+        dueDate: new Date(todo.dueDate),
+      };
+    });
+
+    // 마이그레이션이 필요한 경우 LocalStorage 업데이트
+    if (needsMigration) {
+      console.log('[Migration] Migrated legacy todos and saved to localStorage');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    }
+
+    return todos;
   } catch (error) {
     console.error('Failed to load todos from localStorage:', error);
     return [];
@@ -74,8 +101,8 @@ export function useTodos() {
   const addTodo = useCallback((input: CreateTodoInput) => {
     const newTodo: Todo = {
       id: crypto.randomUUID(),
-      ...input,
       createdAt: new Date(),
+      ...input,
     };
 
     setTodos((prev) => [newTodo, ...prev]);
@@ -185,6 +212,7 @@ export function useTodos() {
           const importedTodos: Todo[] = validationResult.data.todos.map((todo) => ({
             ...todo,
             createdAt: new Date(todo.createdAt),
+            dueDate: todo.dueDate ? new Date(todo.dueDate) : new Date(todo.createdAt),
           }));
 
           setTodos(importedTodos);

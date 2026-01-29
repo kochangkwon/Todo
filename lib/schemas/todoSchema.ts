@@ -22,6 +22,10 @@ export const createTodoSchema = z.object({
   priority: prioritySchema,
 
   completed: z.boolean().default(false),
+
+  dueDate: z.date({
+    message: '마감일은 유효한 날짜여야 합니다.',
+  }),
 });
 
 /**
@@ -38,6 +42,10 @@ export const updateTodoSchema = z.object({
   priority: prioritySchema.optional(),
 
   completed: z.boolean().optional(),
+
+  dueDate: z.date({
+    message: '마감일은 유효한 날짜여야 합니다.',
+  }).optional(),
 });
 
 /**
@@ -54,6 +62,7 @@ export const todoSchema = z.object({
   completed: z.boolean(),
   priority: prioritySchema,
   createdAt: z.union([z.string(), z.date()]),
+  dueDate: z.union([z.string(), z.date()]),
 });
 
 /**

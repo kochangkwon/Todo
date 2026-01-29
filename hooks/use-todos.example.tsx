@@ -35,6 +35,7 @@ export function TodosExample() {
       content: newTodoContent,
       priority: 'medium',
       completed: false,
+      dueDate: new Date(),
     });
 
     setNewTodoContent('');

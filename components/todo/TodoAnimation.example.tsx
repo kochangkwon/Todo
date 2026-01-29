@@ -20,6 +20,7 @@ export function TodoAnimationExample() {
       completed: false,
       priority: 'high',
       createdAt: new Date(),
+      dueDate: new Date(),
     },
     {
       id: '2',
@@ -27,6 +28,7 @@ export function TodoAnimationExample() {
       completed: false,
       priority: 'medium',
       createdAt: new Date(),
+      dueDate: new Date(),
     },
   ]);
 
@@ -37,6 +39,7 @@ export function TodoAnimationExample() {
       priority,
       completed: false,
       createdAt: new Date(),
+      dueDate: new Date(),
     };
 
     setTodos((prev) => [newTodo, ...prev]);
@@ -62,6 +65,7 @@ export function TodoAnimationExample() {
         completed: false,
         priority: 'high',
         createdAt: new Date(),
+        dueDate: new Date(),
       },
       {
         id: `${Date.now()}-2`,
@@ -69,6 +73,7 @@ export function TodoAnimationExample() {
         completed: false,
         priority: 'medium',
         createdAt: new Date(),
+        dueDate: new Date(),
       },
       {
         id: `${Date.now()}-3`,
@@ -76,6 +81,7 @@ export function TodoAnimationExample() {
         completed: false,
         priority: 'low',
         createdAt: new Date(),
+        dueDate: new Date(),
       },
     ];
 

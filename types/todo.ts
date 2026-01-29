@@ -31,6 +31,11 @@ export interface Todo {
    * 생성 일시
    */
   createdAt: Date;
+
+  /**
+   * 마감 일시 (캘린더 뷰에서 사용)
+   */
+  dueDate: Date;
 }
 
 /**

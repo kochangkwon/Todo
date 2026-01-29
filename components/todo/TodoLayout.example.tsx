@@ -23,6 +23,7 @@ export function TodoLayoutExample() {
       completed: false,
       priority: 'high',
       createdAt: new Date('2024-01-15'),
+      dueDate: new Date('2024-01-15'),
     },
     {
       id: '2',
@@ -30,6 +31,7 @@ export function TodoLayoutExample() {
       completed: true,
       priority: 'medium',
       createdAt: new Date('2024-01-16'),
+      dueDate: new Date('2024-01-16'),
     },
     {
       id: '3',
@@ -37,6 +39,7 @@ export function TodoLayoutExample() {
       completed: false,
       priority: 'high',
       createdAt: new Date('2024-01-14'),
+      dueDate: new Date('2024-01-14'),
     },
     {
       id: '4',
@@ -44,6 +47,7 @@ export function TodoLayoutExample() {
       completed: false,
       priority: 'low',
       createdAt: new Date('2024-01-17'),
+      dueDate: new Date('2024-01-17'),
     },
     {
       id: '5',
@@ -51,6 +55,7 @@ export function TodoLayoutExample() {
       completed: true,
       priority: 'low',
       createdAt: new Date('2024-01-13'),
+      dueDate: new Date('2024-01-13'),
     },
   ]);
 
@@ -61,6 +66,7 @@ export function TodoLayoutExample() {
       priority,
       completed: false,
       createdAt: new Date(),
+      dueDate: new Date(),
     };
 
     setTodos((prev) => [newTodo, ...prev]);

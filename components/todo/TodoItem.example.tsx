@@ -18,6 +18,7 @@ export function TodoItemExample() {
       completed: false,
       priority: 'high',
       createdAt: new Date(),
+      dueDate: new Date(),
     },
     {
       id: '2',
@@ -25,6 +26,7 @@ export function TodoItemExample() {
       completed: true,
       priority: 'medium',
       createdAt: new Date(),
+      dueDate: new Date(),
     },
     {
       id: '3',
@@ -32,6 +34,7 @@ export function TodoItemExample() {
       completed: false,
       priority: 'low',
       createdAt: new Date(),
+      dueDate: new Date(),
     },
   ]);
 
@@ -58,6 +61,7 @@ export function TodoItemExample() {
       completed: false,
       priority: randomPriority,
       createdAt: new Date(),
+      dueDate: new Date(),
     };
 
     setTodos((prev) => [newTodo, ...prev]);
